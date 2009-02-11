@@ -21,12 +21,10 @@
 
 class OpenFriends_Peer_Consumer extends OpenFriends_Peer
 {
-  public function url()
+  public function __construct($name = null, $url = null, $token = null)
   {
-    $urls = $this->urls;
-    if($urls)
-      return $urls[0]['value'];
-    else
-      return $url;
+    $this->name = $name;
+    $this->url = $url;
+    $this->token = $token;
   }
 }

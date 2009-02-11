@@ -117,7 +117,7 @@ class OpenFriends_Peer extends OpenFriends implements Serializable
   {
     $post = Array('provider' => (string)$this,
                   'consumer' => (string)$consumer,
-                  'contacts' => $contacts);
+                  'contacts' => (string)$contacts);
     return $this->performHttpPost($consumer->url, $post); 
   }
 }

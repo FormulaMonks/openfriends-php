@@ -26,17 +26,14 @@ $user->friends = Array(
                                         ),
                          ),
                        );
-$provider_attributes = Array('displayName' => 'OpenFriends Provider', 
-                             'urls' => Array(Array('value' => 'http://laptop.dev.osterman.com/~e/openfriends/provider.php', 'type' => 'provider')),
-                            );  
-$provider_descriptor = OpenFriends::encode($provider_attributes);
-$provider = new OpenFriends_Peer_Provider($provider_descriptor, Array('token' => $consumer->token));
+
+$provider = new OpenFriends_Peer_Provider('OpenFriends Provider', 'http://laptop.dev.osterman.com/~e/openfriends/provider.php', $consumer->token);  
 
 ?>
 <style>
   input, textarea { display: block; }
 </style>
-<form method="POST" action="<?php echo $consumer->url(); ?>" /> 
+<form method="POST" action="<?php echo $consumer->url; ?>" /> 
   <label for"provider">Provider:</label>
   <textarea rows="10" cols="80" name="provider"><?php echo $provider; ?></textarea>
   <label for="consumer">Consumer:</label>

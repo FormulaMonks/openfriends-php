@@ -20,5 +20,11 @@
 
 class OpenFriends_Peer_Provider extends OpenFriends_Peer
 {
+  public function __construct($name = null, $url = null, $token = null)
+  {
+    $this->name = $name;
+    $this->url = $url;
+    $this->token = $token;
+  }
 }
 
